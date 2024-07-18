@@ -9,7 +9,7 @@ class base_num_counter():
 
     def decimal_to_binary(bn, num):
         bn_output = ''
-        while num > 0: #111
+        while num > 0:
             bn_output = str(num % bn) + bn_output
             num = num // bn
 
