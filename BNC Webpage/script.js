@@ -1,4 +1,6 @@
 let baseNumber = 1;
+let rangeMin;
+let rangeMax;
 
 function setBase(){
     var bnInput = document.getElementById('basenum');
@@ -13,10 +15,10 @@ function setBase(){
 
 function setRange(){
     var rangeInput = document.getElementById('rangemin');
-    var rangeMin = +rangeInput.value;
+    rangeMin = +rangeInput.value;
 
     rangeInput = document.getElementById('rangemax');
-    var rangeMax = +rangeInput.value;
+    rangeMax = +rangeInput.value;
 
     if (rangeMax < rangeMin) {
         rangeMax = rangeMin;
@@ -27,8 +29,6 @@ function setRange(){
 }
 
 function decToBaseNum(num){
-    num = 10; // test number
-
     let bnOutput = '';
 
     if (baseNumber > 1) {
@@ -43,19 +43,20 @@ function decToBaseNum(num){
         }
     }
 
-    console.log(bnOutput);
     return bnOutput || '0';
 }
 
-function count(base, countMin, countMax){
+function count(){
     var curNum 
-    for (let i = countMin; i < countMax; i++) {
-        curNum = i + (countMin + 1);
-        console.log(curNum);
+    console.clear()
+    for (let i = rangeMin; i < rangeMax + 1; i++) {
+        curNum = i + (rangeMin - 1);
+        console.log(decToBaseNum(curNum))
       }
 }
 
 function submitButton() {
     setBase();
     setRange();
+    count();
 }

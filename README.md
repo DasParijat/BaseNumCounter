@@ -6,5 +6,8 @@ Currently I am translating this code over to javascript and make a simple websit
 
 TODO:
 -Base Number Counter function in JS (done 8/13)
--User input for website (done 8/11)
+    -Finished ability to count (done 8/13)
+    -Allow user to look up single number
+-User input base number in website (done 8/11)
+    -User input range (done 8/13)
 -Output list user can see and copy from
