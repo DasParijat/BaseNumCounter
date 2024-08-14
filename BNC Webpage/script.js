@@ -1,9 +1,6 @@
-let baseNumber = 1;
-let rangeMin;
-let rangeMax;
 
 function setBase(){
-    var bnInput = document.getElementById('basenum');
+    let bnInput = document.getElementById('basenum');
     baseNumber = +bnInput.value;
 
     if (baseNumber < 1) {
@@ -11,30 +8,32 @@ function setBase(){
     }
 
     console.log(baseNumber);
+    return baseNumber;
 }
 
 function setRange(){
-    var rangeInput = document.getElementById('rangemin');
-    rangeMin = +rangeInput.value;
+    let rangeInput = document.getElementById('rangemin');
+    let rangeMin = +rangeInput.value;
 
     rangeInput = document.getElementById('rangemax');
-    rangeMax = +rangeInput.value;
+    let rangeMax = +rangeInput.value;
 
-    if (rangeMax < rangeMin) {
+    if (rangeMax < rangeMin + 1) {
         rangeMax = rangeMin;
     }
 
     console.log(rangeMin);
     console.log(rangeMax);
+    return {rangeMin, rangeMax};
 }
 
-function decToBaseNum(num){
+function decToBaseNum(num, base){
     let bnOutput = '';
 
-    if (baseNumber > 1) {
+    if (base > 1) {
         while (num > 0) {
-            bnOutput = (num % baseNumber) + bnOutput;
-            num = Math.floor(num / baseNumber);
+            bnOutput = (num % base) + bnOutput;
+            num = Math.floor(num / base);
         }
     } else {
         // handles a base num of 1
@@ -46,17 +45,21 @@ function decToBaseNum(num){
     return bnOutput || '0';
 }
 
-function count(){
-    var curNum 
+function count(base, {rangeMin, rangeMax}){
+    let curNum 
     console.clear()
+    resultContainer.innerHTML = '';
+
     for (let i = rangeMin; i < rangeMax + 1; i++) {
         curNum = i + (rangeMin - 1);
-        console.log(decToBaseNum(curNum))
+        result = decToBaseNum(curNum, base);
+
+        console.log(result);
+
+        resultContainer.innerHTML += `Decimal: ${curNum}, Base ${base}: ${result}<br>`;
       }
 }
 
 function submitButton() {
-    setBase();
-    setRange();
-    count();
+    count(setBase(), setRange());
 }

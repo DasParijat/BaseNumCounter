@@ -11,3 +11,5 @@ TODO:
 -User input base number in website (done 8/11)
     -User input range (done 8/13)
 -Output list user can see and copy from
+    -Make program display it (done 8/14)
+    -TODO Make it into a table
