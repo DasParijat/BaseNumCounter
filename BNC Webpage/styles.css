@@ -1,5 +1,10 @@
 
 /* Nearly everything should be centered*/
+body {
+    background-image: url("BNM_background.png");
+    background-color: aliceblue;
+    background-repeat: repeat-x;
+}
 
 div {
     width: 100%;
@@ -14,7 +19,7 @@ input{
 }
 
 button {
-    background-color: aliceblue;
+    background-color: rgb(235, 245, 253);
 }
 
 table {
@@ -32,9 +37,10 @@ th, td {
 
 td:nth-child(1), th:nth-child(1) {
     width: 1%; 
-    background-color: aliceblue;
+    background-color: rgb(235, 245, 253);
 }
 
 td:nth-child(2), th:nth-child(2) {
     width: 50%; 
+    background-color: white;
 }

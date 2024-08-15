@@ -1,3 +1,4 @@
+const LIST_LIMIT = 10000;
 
 function setBase(){
     let bnInput = document.getElementById('basenum');
@@ -7,7 +8,6 @@ function setBase(){
         baseNumber = 1;
     }
 
-    console.log(baseNumber);
     return baseNumber;
 }
 
@@ -22,8 +22,12 @@ function setRange(){
         rangeMax = rangeMin;
     }
 
-    console.log(rangeMin);
-    console.log(rangeMax);
+    if ((rangeMax - rangeMin) > LIST_LIMIT) {
+        rangeMax = rangeMin + LIST_LIMIT - 1;
+        alert("Max range has been limited to " + rangeMax);
+        document.getElementById('rangemax').value = rangeMax
+    }
+
     return {rangeMin, rangeMax};
 }
 
@@ -75,7 +79,7 @@ function count(base, {rangeMin, rangeMax}){
         copyText += result;
         // if statement prevents comma placed at end
         if (curNum != rangeMax) {
-            copyText += ', '
+            copyText += ', ';
         }
       }
     
