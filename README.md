@@ -13,3 +13,5 @@ TODO:
 -Output list user can see and copy from
     -Make program display it (done 8/14)
     -TODO Make it into a table (done 8/14)
+    -Make user copy from (done 8/15)
+        -Make copying toggleable (done 8/15)

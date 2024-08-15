@@ -1,4 +1,5 @@
-#Base Number Counter
+# Base Number Counter
+# This script can't handle base number of 1, unlike the JS script
 
 class base_num_counter():
     

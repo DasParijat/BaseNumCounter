@@ -1,4 +1,6 @@
+let canCopy = false;
 const LIST_LIMIT = 10000;
+
 
 function setBase(){
     // getting base number input
@@ -96,9 +98,13 @@ function count(base, {rangeMin, rangeMax}){
       }
     
     // Copy results into clipboard
-    navigator.clipboard.writeText(copyText);
+    if (canCopy) {
+        navigator.clipboard.writeText(copyText);
+    }
+}
 
-
+function setCanCopy() {
+    canCopy = !canCopy;
 }
 
 function submitButton() {
