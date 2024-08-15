@@ -46,17 +46,33 @@ function decToBaseNum(num, base){
 }
 
 function count(base, {rangeMin, rangeMax}){
-    let curNum 
+    let curNum     
     console.clear()
-    resultContainer.innerHTML = '';
+
+    // set up table
+    const resultTable = document.getElementById('resultContainer');
+    resultTable.innerHTML = `
+        <tr>
+            <th>Base 10</th>
+            <th>Base ${base}</th>
+        </tr>
+    `;
 
     for (let i = rangeMin; i < rangeMax + 1; i++) {
-        curNum = i + (rangeMin - 1);
+        curNum = i;
         result = decToBaseNum(curNum, base);
 
         console.log(result);
 
-        resultContainer.innerHTML += `Decimal: ${curNum}, Base ${base}: ${result}<br>`;
+        // create row
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${curNum}</td>
+            <td>${result}</td>
+        `;
+
+        resultTable.appendChild(row);
+
       }
 }
 
