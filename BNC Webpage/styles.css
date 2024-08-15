@@ -13,6 +13,10 @@ input{
     text-align: left;
 }
 
+button {
+    background-color: aliceblue;
+}
+
 table {
     width: 20%; 
     border-collapse: collapse; 

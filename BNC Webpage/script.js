@@ -46,6 +46,7 @@ function decToBaseNum(num, base){
 }
 
 function count(base, {rangeMin, rangeMax}){
+    let copyText = ''
     let curNum     
     console.clear()
 
@@ -62,8 +63,6 @@ function count(base, {rangeMin, rangeMax}){
         curNum = i;
         result = decToBaseNum(curNum, base);
 
-        console.log(result);
-
         // create row
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -73,9 +72,20 @@ function count(base, {rangeMin, rangeMax}){
 
         resultTable.appendChild(row);
 
+        copyText += result;
+        // if statement prevents comma placed at end
+        if (curNum != rangeMax) {
+            copyText += ', '
+        }
       }
+    
+    // Copy results into clipboard
+    navigator.clipboard.writeText(copyText);
+
+
 }
 
 function submitButton() {
     count(setBase(), setRange());
+    
 }
