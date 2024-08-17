@@ -14,8 +14,8 @@ div {
 }
 
 p {
-    margin-left: 475px;
-    margin-right: 475px;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 
 input{
@@ -38,6 +38,7 @@ th, td {
     border: 1px solid #ddd; 
     padding: 10px; 
     text-align: center; 
+
 }
 
 td:nth-child(1), th:nth-child(1) {
@@ -49,4 +50,10 @@ td:nth-child(2), th:nth-child(2) {
     width: 50%; 
     text-align: left;
     background-color: white;
+}
+
+#credits {
+    position: relative;
+    bottom: 10px;
+    width: 100%;
 }
