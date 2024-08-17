@@ -1,6 +1,8 @@
 Base Number Counter by Parijat Das
 Last Updated - 8/16/2024
 
+View webpage here: https://basenumbercounter.tiiny.site
+
 Functionality:
 This program generates a list of numbers translated from decimal (base 10) to any other base number. Decimals are even included (and it looks as messy as it sounds), but nothing under 1.
 
@@ -20,5 +22,5 @@ TODO List:
         -Make copying toggleable (done 8/15)
 -Fix Python code to be similar to JS code (done 8/16)
     -Make Python program handle base 1 (done 8/16)
--Get the webpage visible somehow
-    -Get something to host the html page
+-Get the webpage visible somehow (done 8/17)
+    -Get something to host the html page (done 8/17)
