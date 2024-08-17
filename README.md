@@ -24,3 +24,4 @@ TODO List:
     -Make Python program handle base 1 (done 8/16)
 -Get the webpage visible somehow (done 8/17)
     -Get something to host the html page (done 8/17)
+-Make a seperate webpage to access from the first in order to explain what base numbers are. 
