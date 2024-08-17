@@ -1,6 +1,11 @@
 let canCopy = false;
 const LIST_LIMIT = 10000;
 
+function warnChange(alertMessage, id, newValue) {
+    alert(alertMessage);
+    document.getElementById(id).value = newValue;
+}
+
 function setBase(){
     // getting base number input
     let bnInput = document.getElementById('basenum');
@@ -9,6 +14,7 @@ function setBase(){
     // base num can't be under 1
     if (baseNumber < 1) {
         baseNumber = 1;
+        warnChange("Base number has to be above 0", 'basenum', 1);
     }
 
     return baseNumber;
@@ -26,15 +32,14 @@ function setRange(){
     // Make sure rangeMax doesn't exceed rangeMin
     if (rangeMax < rangeMin + 1) {
         rangeMax = rangeMin;
+        warnChange("Due to max range being less than min range, it has been set equal to min", 'rangemax', rangeMax);
     }
 
     // Makes sure list doesn't exceed limit
     if ((rangeMax - rangeMin) > LIST_LIMIT) {
         rangeMax = rangeMin + LIST_LIMIT - 1;
+        warnChange(("No list exceeds length of 10k. Max range has been limited to " + rangeMax), 'rangemax', rangeMax);
 
-        // Indicates to user the changes made
-        alert("Max range has been limited to " + rangeMax);
-        document.getElementById('rangemax').value = rangeMax
     }
 
     return {rangeMin, rangeMax};
@@ -54,7 +59,7 @@ function decToBaseNum(num, base){
     } else {
         // handles a base num OF 1
         for (let i = 0; i < num; i++) {
-            bnOutput = bnOutput + '0';
+            bnOutput += '0';
         }
 
     }

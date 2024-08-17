@@ -15,5 +15,5 @@ TODO:
     -TODO Make it into a table (done 8/14)
     -Make user copy from (done 8/15)
         -Make copying toggleable (done 8/15)
--Fix Python code to be similar to JS code
-    -Make Python program handle base 1
+-Fix Python code to be similar to JS code (done 8/16)
+    -Make Python program handle base 1 (done 8/16)

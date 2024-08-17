@@ -1,5 +1,10 @@
 # Base Number Counter
-# This script can't handle base number of 1, unlike the JS script
+
+# Examples:
+# base 1: 0 00 000 0000
+# base 2: 0 1 10 11 100 101 110 111
+# base 3: 0 1 2 10 11 12 20 21 22 100 101 102 110 111 112 120 121 122 200
+
 
 class base_num_counter():
     
@@ -10,9 +15,15 @@ class base_num_counter():
 
     def decimal_to_binary(bn, num):
         bn_output = ''
-        while num > 0:
-            bn_output = str(num % bn) + bn_output
-            num = num // bn
+        if (bn > 1):
+            # handles a base num NOT 1
+            while num > 0:
+                bn_output = str(num % bn) + bn_output
+                num = num // bn
+        else:
+            # handles a base num OF 1
+            for i in range(num):
+                bn_output += '0'
 
         return bn_output
 
@@ -21,10 +32,6 @@ class base_num_counter():
         for i in range(count_max - count_min):
             cur_num = i+(count_min + 1)
             print(f"{cur_num} = {base_num_counter.decimal_to_binary(base, cur_num)}")
-
-# base 1: 0 00 000 0000
-# base 2: 0 1 10 11 100 101 110 111
-# base 3: 0 1 2 10 11 12 20 21 22 100 101 102 110 111 112 120 121 122 200
 
 def main():
     bnc = base_num_counter
