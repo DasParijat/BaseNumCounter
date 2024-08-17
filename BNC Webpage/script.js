@@ -1,7 +1,6 @@
 let canCopy = false;
 const LIST_LIMIT = 10000;
 
-
 function setBase(){
     // getting base number input
     let bnInput = document.getElementById('basenum');
@@ -71,7 +70,7 @@ function count(base, {rangeMin, rangeMax}){
     const resultTable = document.getElementById('resultContainer');
     resultTable.innerHTML = `
         <tr>
-            <th>Base 10</th>
+            <th>(Base 10)</th>
             <th>Base ${base}</th>
         </tr>
     `;
@@ -84,7 +83,7 @@ function count(base, {rangeMin, rangeMax}){
         // create table row
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${curNum}</td>
+            <td>(${curNum})</td>
             <td>${result}</td>
         `;
         

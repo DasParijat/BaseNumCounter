@@ -13,6 +13,11 @@ div {
     text-align: center;
 }
 
+p {
+    margin-left: 475px;
+    margin-right: 475px;
+}
+
 input{
     width: 5%;
     text-align: left;
@@ -42,5 +47,6 @@ td:nth-child(1), th:nth-child(1) {
 
 td:nth-child(2), th:nth-child(2) {
     width: 50%; 
+    text-align: left;
     background-color: white;
 }
