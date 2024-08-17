@@ -1,3 +1,5 @@
+// Base Number Counter - JS Version
+
 let canCopy = false;
 const LIST_LIMIT = 10000;
 
@@ -32,13 +34,15 @@ function setRange(){
     // Make sure rangeMax doesn't exceed rangeMin
     if (rangeMax < rangeMin + 1) {
         rangeMax = rangeMin;
-        warnChange("Due to max range being less than min range, it has been set equal to min", 'rangemax', rangeMax);
+        warnChange("Due to max range being less than min range, it has been set equal to min",
+             'rangemax', rangeMax);
     }
 
     // Makes sure list doesn't exceed limit
     if ((rangeMax - rangeMin) > LIST_LIMIT) {
         rangeMax = rangeMin + LIST_LIMIT - 1;
-        warnChange(("No list exceeds length of 10k. Max range has been limited to " + rangeMax), 'rangemax', rangeMax);
+        warnChange(("No list exceeds length of 10k. Max range has been limited to " + rangeMax),
+         'rangemax', rangeMax);
 
     }
 
@@ -68,8 +72,7 @@ function decToBaseNum(num, base){
 }
 
 function count(base, {rangeMin, rangeMax}){
-    let copyText = ''
-    let curNum     
+    let copyText = ''; 
 
     // set up table
     const resultTable = document.getElementById('resultContainer');
@@ -80,23 +83,22 @@ function count(base, {rangeMin, rangeMax}){
         </tr>
     `;
 
+    // make table/list
     for (let i = rangeMin; i < rangeMax + 1; i++) {
-        // get result for current number
-        curNum = i;
-        result = decToBaseNum(curNum, base);
+        // get result for current number 'i'
+        result = decToBaseNum(i, base);
 
         // create table row
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>(${curNum})</td>
+            <td>(${i})</td>
             <td>${result}</td>
         `;
-        
         resultTable.appendChild(row);
 
         // Add onto text that'll be copied onto clipboard
         copyText += result;
-        if (curNum != rangeMax) {
+        if (i != rangeMax) {
             copyText += ', ';
         }
       }
@@ -104,6 +106,7 @@ function count(base, {rangeMin, rangeMax}){
     // Copy results into clipboard
     if (canCopy) {
         navigator.clipboard.writeText(copyText);
+        alert("Copied list");
     }
 }
 

@@ -1,10 +1,13 @@
-Base Number Counter
+Base Number Counter by Parijat Das
+Last Updated - 8/16/2024
 
-This program intends to count from a given minimum number and maximum number in a given number base, such as base 10 (Normal numbers) or base 2 (binary numbers).
+Functionality:
+This program generates a list of numbers translated from decimal (base 10) to any other base number. Decimals are even included (and it looks as messy as it sounds), but nothing under 1.
 
-Currently I am translating this code over to javascript and make a simple website out of it. 
+History:
+This idea of different base numbers other than 10 or 2 came to my some time ago, so I decided to make a Python program out of it. Then, to practice my website building skills, I decided to convert the program into a viewable and working wbepage. It's quite a simple site but it helped me get a better understanding of HTML, JavaScript, and CSS than any tutorial hell could. 
 
-TODO:
+TODO List:
 -Base Number Counter function in JS (done 8/13)
     -Finished ability to count (done 8/13)
     -Allow user to look up single number (done 8/16 via clarification)
@@ -17,3 +20,5 @@ TODO:
         -Make copying toggleable (done 8/15)
 -Fix Python code to be similar to JS code (done 8/16)
     -Make Python program handle base 1 (done 8/16)
+-Get the webpage visible somehow
+    -Get something to host the html page

@@ -1,5 +1,5 @@
+/* CSS Styling - Nearly everything should be centered*/
 
-/* Nearly everything should be centered*/
 body {
     background-image: url("BNM_background.png");
     background-color: aliceblue;
@@ -7,6 +7,7 @@ body {
 }
 
 div {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +19,7 @@ p {
     margin-right: 500px;
 }
 
-input{
+input {
     width: 5%;
     text-align: left;
 }
@@ -31,7 +32,6 @@ table {
     width: 20%; 
     border-collapse: collapse; 
     margin: 0 auto; 
-    font-family: Arial, sans-serif; 
 }
 
 th, td {
@@ -48,6 +48,7 @@ td:nth-child(1), th:nth-child(1) {
 
 td:nth-child(2), th:nth-child(2) {
     width: 50%; 
+    font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     background-color: white;
 }

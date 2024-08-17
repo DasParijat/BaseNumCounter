@@ -1,10 +1,11 @@
-# Base Number Counter
+# Base Number Counter - Python Version
 
-# Examples:
-# base 1: 0 00 000 0000
-# base 2: 0 1 10 11 100 101 110 111
-# base 3: 0 1 2 10 11 12 20 21 22 100 101 102 110 111 112 120 121 122 200
-
+"""
+Examples:
+-base 1: 0 00 000 0000 00000
+-base 2: 0 1 10 11 100 
+-base 3: 0 1 2 10 11 
+"""
 
 class base_num_counter():
     
