@@ -1,7 +1,7 @@
 Base Number Counter by Parijat Das
-Last Updated - 8/17/2024
+Last Updated - 5/22/2025
 
-View webpage here: https://basenumbercounter.tiiny.site
+View webpage here: https://basenumcounter.tiiny.site
 
 Functionality:
 This program generates a list of numbers translated from decimal (base 10) to any other base number. Decimals are even included (and it looks as messy as it sounds), but nothing under 1.
