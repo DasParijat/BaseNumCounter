@@ -19,6 +19,12 @@ p {
     margin-right: 500px;
 }
 
+.intro-paragraph {
+    line-height: 1.5;
+    max-width: 65%;
+    margin: 0 auto;
+}
+
 input {
     width: 5%;
     text-align: left;
