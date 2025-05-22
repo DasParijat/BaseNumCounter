@@ -9,12 +9,14 @@ Examples:
 
 class base_num_counter():
     
-    def set_base_num(base):
+    def set_base_num(base : int) -> int:
+        ## Returns the base number if set to >= 1
         if base < 1:
            base = 1
         return base
 
-    def decimal_to_binary(bn, num):
+    def decimal_to_binary(bn : int, num : int) -> str:
+        ## Converts a decimal number to a base number
         bn_output = ''
         if (bn > 1):
             # handles a base num NOT 1
@@ -28,7 +30,8 @@ class base_num_counter():
 
         return bn_output
 
-    def count(base, count_min, count_max):
+    def count(base : int, count_min : int, count_max : int) -> None:
+        ## Counts from min to max in base {base}
         cur_num : int
         for i in range(count_max - count_min):
             cur_num = i+(count_min + 1)

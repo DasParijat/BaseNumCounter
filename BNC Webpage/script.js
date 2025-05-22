@@ -4,11 +4,14 @@ let canCopy = false;
 const LIST_LIMIT = 10000;
 
 function warnChange(alertMessage, id, newValue) {
+    // Warns user with popup message
     alert(alertMessage);
     document.getElementById(id).value = newValue;
 }
 
 function setBase(){
+    // Handles setting the base number
+
     // getting base number input
     let bnInput = document.getElementById('basenum');
     baseNumber = +bnInput.value;
@@ -23,6 +26,8 @@ function setBase(){
 }
 
 function setRange(){
+    // Sets the range of numbers to be listed
+
     // getting range min input
     let rangeInput = document.getElementById('rangemin');
     let rangeMin = +rangeInput.value;
@@ -50,6 +55,7 @@ function setRange(){
 }
 
 function decToBaseNum(num, base){
+    // Convert decimal to base number
     let bnOutput = '';
 
     // Calculations
@@ -72,6 +78,7 @@ function decToBaseNum(num, base){
 }
 
 function count(base, {rangeMin, rangeMax}){
+    // Handles counting from rangeMin to rangeMax in base 'base'
     let copyText = ''; 
 
     // set up table
@@ -111,9 +118,11 @@ function count(base, {rangeMin, rangeMax}){
 }
 
 function setCanCopy() {
+    // Toggles if list is copied when counting (used with checkbox)
     canCopy = !canCopy;
 }
 
 function submitButton() {
+    // What happens when submit button is pressed
     count(setBase(), setRange());
 }
