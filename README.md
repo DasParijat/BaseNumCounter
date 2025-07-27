@@ -1,5 +1,5 @@
 Base Number Counter by Parijat Das
-Last Updated - 5/22/2025
+Last Updated - 7/27/2025
 
 View webpage here: https://basenumcounter.tiiny.site
 
