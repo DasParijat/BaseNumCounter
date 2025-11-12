@@ -6,6 +6,7 @@ Examples:
 -base 2: 0 1 10 11 100 
 -base 3: 0 1 2 10 11 
 """
+avaliable_digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()'
 
 class base_num_counter():
     
@@ -15,13 +16,17 @@ class base_num_counter():
            base = 1
         return base
 
-    def decimal_to_binary(bn : int, num : int) -> str:
+    def decimal_to_base(bn : int, num : int) -> str:
         ## Converts a decimal number to a base number
         bn_output = ''
         if (bn > 1):
             # handles a base num NOT 1
             while num > 0:
-                bn_output = str(num % bn) + bn_output
+                if num % bn >= len(avaliable_digits):
+                    bn_output = str(num % bn) + bn_output
+                else:
+                    bn_output = avaliable_digits[num % bn] + bn_output
+                
                 num = num // bn
         else:
             # handles a base num OF 1
@@ -35,7 +40,7 @@ class base_num_counter():
         cur_num : int
         for i in range(count_max - count_min):
             cur_num = i+(count_min + 1)
-            print(f"{cur_num} = {base_num_counter.decimal_to_binary(base, cur_num)}")
+            print(f"{cur_num} = {base_num_counter.decimal_to_base(base, cur_num)}")
 
 def main():
     bnc = base_num_counter
