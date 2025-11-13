@@ -1,6 +1,7 @@
 // Base Number Counter - JS Version
 
 let canCopy = false;
+let avaliableDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()";
 const LIST_LIMIT = 10000;
 
 function warnChange(alertMessage, id, newValue) {
@@ -62,9 +63,23 @@ function decToBaseNum(num, base){
     if (base > 1) {
         // handles a base num NOT 1
         while (num > 0) {
-            bnOutput = (num % base) + bnOutput;
+            if (num % base >= avaliableDigits.length()) {
+                bnOutput = (num % base) + bnOutput;
+            }
+            else {
+                bnOutput = avaliableDigits[num % base] + bnOutput;
+            }
+
             num = Math.floor(num / base);
         }
+        // NOT WORKING
+        /* while num > 0:
+                if num % bn >= len(avaliable_digits):
+                    bn_output = str(num % bn) + bn_output
+                else:
+                    bn_output = avaliable_digits[num % bn] + bn_output
+                
+                num = num // bn */
 
     } else {
         // handles a base num OF 1
