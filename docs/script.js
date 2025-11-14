@@ -63,7 +63,7 @@ function decToBaseNum(num, base){
     if (base > 1) {
         // handles a base num NOT 1
         while (num > 0) {
-            if (num % base >= avaliableDigits.length()) {
+            if (num % base >= avaliableDigits.length) {
                 bnOutput = (num % base) + bnOutput;
             }
             else {
@@ -72,16 +72,9 @@ function decToBaseNum(num, base){
 
             num = Math.floor(num / base);
         }
-        // NOT WORKING
-        /* while num > 0:
-                if num % bn >= len(avaliable_digits):
-                    bn_output = str(num % bn) + bn_output
-                else:
-                    bn_output = avaliable_digits[num % bn] + bn_output
-                
-                num = num // bn */
 
-    } else {
+    } 
+    else {
         // handles a base num OF 1
         for (let i = 0; i < num; i++) {
             bnOutput += '0';
